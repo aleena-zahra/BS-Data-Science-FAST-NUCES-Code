@@ -14,7 +14,7 @@ This repository includes work from courses such as:
 - Data Mining
 
 ## Repository Structure
-
+```
 ├── Year 1/
   ├── Course Name/
   │   ├── Theory/
