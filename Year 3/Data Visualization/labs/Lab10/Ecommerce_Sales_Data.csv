@@ -1,0 +1,301 @@
+Order ID,Order Date,Customer Name,Region,Category,Product Name,Quantity,Sales,Profit,Ship Mode,Payment Type
+1000,2023-01-13,Alex Morgan,North,Clothing,Jacket Z,12,217284,33197.21,Standard,Credit Card
+1001,2023-12-06,Morgan Scott,South,Electronics,Laptop X,7,287154,67084.01,Express,Debit Card
+1002,2024-02-05,Jamie Carter,South,Clothing,Dress K,8,292616,58747.56,Express,Cash
+1003,2025-08-09,Chris Evans,West,Furniture,Chair Set,8,778560,174062.22,Express,Credit Card
+1004,2023-06-19,Morgan Scott,East,Electronics,Phone Y,5,473270,40715.95,Standard,Debit Card
+1005,2023-10-10,Alex Morgan,East,Accessories,Watch W,6,194004,45037.92,Standard,Credit Card
+1006,2024-05-01,Taylor Lee,East,Electronics,Camera C,12,610536,80296.69,Standard,Cash
+1007,2024-12-22,Alex Morgan,North,Furniture,Sofa H,8,306216,26358.51,Standard,Cash
+1008,2023-09-17,Alex Morgan,East,Electronics,Laptop X,14,674534,96038.6,Standard,Cash
+1009,2025-09-05,Alex Morgan,North,Accessories,Bag A,1,18405,3891.14,Standard,Cash
+1010,2024-07-14,Jordan Brown,West,Electronics,Camera C,8,146376,32148.72,Standard,Credit Card
+1011,2025-03-20,Chris Evans,South,Accessories,Belt E,9,796311,81121.86,Express,Credit Card
+1012,2024-11-16,Chris Evans,South,Furniture,Chair Set,1,5183,340.15,Express,Debit Card
+1013,2024-05-27,Jamie Carter,East,Furniture,Chair Set,3,34389,9774.55,Standard,Cash
+1014,2023-05-28,Chris Evans,West,Clothing,Shirt P,3,11553,812.16,Standard,Cash
+1015,2025-06-12,Morgan Scott,East,Accessories,Belt E,4,363420,18751.05,Standard,Cash
+1016,2023-01-30,Morgan Scott,South,Furniture,Sofa H,12,827688,169470.7,Express,Debit Card
+1017,2023-12-25,Alex Morgan,East,Accessories,Watch W,4,264864,15089.17,Express,Credit Card
+1018,2023-03-25,Taylor Lee,West,Clothing,Pants R,8,501608,36292.5,Standard,Cash
+1019,2024-03-31,Jordan Brown,East,Furniture,Table T,15,920070,57392.05,Express,Debit Card
+1020,2023-05-24,Alex Morgan,South,Furniture,Table T,10,148550,29093.78,Express,Debit Card
+1021,2024-12-19,Morgan Scott,South,Clothing,Shoes Q,10,16950,4704.67,Express,Cash
+1022,2024-05-18,Chris Evans,South,Accessories,Wallet V,6,57192,9391.97,Standard,Debit Card
+1023,2024-06-25,Jamie Carter,South,Clothing,Shirt P,9,445455,75817.33,Standard,Debit Card
+1024,2025-08-19,Jamie Carter,West,Electronics,Camera C,1,76066,7260.53,Standard,Debit Card
+1025,2025-06-03,Chris Evans,West,Furniture,Bookshelf L,2,95402,10124.27,Express,Debit Card
+1026,2023-04-20,Jamie Carter,South,Accessories,Bag A,11,234113,67269.26,Standard,Credit Card
+1027,2023-11-21,Taylor Lee,West,Accessories,Sunglasses F,7,667023,77898.38,Express,Credit Card
+1028,2023-12-01,Jamie Carter,West,Accessories,Sunglasses F,8,640880,66342.75,Express,Cash
+1029,2023-02-25,Jordan Brown,North,Clothing,Dress K,2,83754,6330.97,Standard,Cash
+1030,2024-05-15,Alex Morgan,North,Accessories,Belt E,12,890340,115589.89,Standard,Cash
+1031,2025-02-28,Jordan Brown,East,Clothing,Pants R,3,244938,26023.65,Standard,Cash
+1032,2024-04-06,Taylor Lee,West,Furniture,Chair Set,10,764690,140332.78,Express,Debit Card
+1033,2024-12-18,Jordan Brown,East,Furniture,Table T,9,487125,116743.61,Express,Credit Card
+1034,2025-08-19,Taylor Lee,South,Clothing,Pants R,4,107532,10883.79,Express,Cash
+1035,2023-11-06,Alex Morgan,East,Accessories,Bag A,4,149940,14089.43,Express,Credit Card
+1036,2025-07-12,Taylor Lee,North,Accessories,Watch W,5,468955,59744.53,Express,Credit Card
+1037,2024-03-24,Morgan Scott,West,Clothing,Pants R,12,630864,146765.62,Standard,Debit Card
+1038,2025-08-15,Morgan Scott,West,Electronics,Laptop X,6,290046,56397.85,Standard,Credit Card
+1039,2025-04-01,Alex Morgan,South,Furniture,Bookshelf L,10,400180,67041.29,Express,Credit Card
+1040,2023-06-17,Taylor Lee,North,Accessories,Belt E,14,52472,9828.04,Standard,Cash
+1041,2023-02-08,Jordan Brown,North,Accessories,Watch W,3,120972,15637.42,Express,Cash
+1042,2024-12-23,Chris Evans,North,Electronics,Phone Y,6,175752,45273.21,Express,Credit Card
+1043,2023-05-01,Jamie Carter,East,Clothing,Jacket Z,2,109464,22264.37,Standard,Debit Card
+1044,2025-05-01,Chris Evans,West,Electronics,Phone Y,14,645190,90393.13,Standard,Debit Card
+1045,2023-07-03,Alex Morgan,North,Accessories,Watch W,1,36198,3049.15,Standard,Cash
+1046,2024-06-23,Alex Morgan,North,Furniture,Table T,6,127326,21327.89,Standard,Credit Card
+1047,2024-02-26,Morgan Scott,West,Electronics,Phone Y,5,460215,46638.23,Express,Debit Card
+1048,2024-07-16,Jordan Brown,East,Electronics,Smartwatch S,6,42294,7544.05,Express,Credit Card
+1049,2024-03-07,Jamie Carter,East,Electronics,Camera C,7,29568,1581.6,Express,Cash
+1050,2023-02-23,Taylor Lee,East,Furniture,Sofa H,2,90726,20317.36,Express,Cash
+1051,2024-02-24,Chris Evans,East,Accessories,Watch W,14,972230,249204.61,Standard,Credit Card
+1052,2024-12-18,Taylor Lee,North,Clothing,Jacket Z,4,155416,22313.77,Express,Credit Card
+1053,2023-05-29,Taylor Lee,East,Furniture,Sofa H,7,627361,137390.69,Standard,Cash
+1054,2023-10-16,Chris Evans,West,Accessories,Belt E,11,267036,65406.88,Express,Cash
+1055,2024-01-15,Chris Evans,East,Electronics,Laptop X,11,865260,97190.4,Express,Credit Card
+1056,2024-02-02,Taylor Lee,East,Clothing,Shirt P,2,163534,18412.5,Standard,Credit Card
+1057,2023-06-01,Alex Morgan,West,Accessories,Bag A,8,211680,23945.23,Express,Credit Card
+1058,2024-09-04,Jordan Brown,West,Electronics,Laptop X,9,863307,177963.0,Express,Credit Card
+1059,2023-11-08,Taylor Lee,North,Clothing,Jacket Z,1,78295,18646.3,Express,Cash
+1060,2023-08-26,Jamie Carter,West,Electronics,Laptop X,3,32217,6590.3,Standard,Cash
+1061,2024-08-15,Jordan Brown,North,Electronics,Phone Y,2,172722,28100.2,Express,Credit Card
+1062,2023-12-13,Taylor Lee,North,Accessories,Watch W,3,15957,3379.06,Express,Credit Card
+1063,2025-02-02,Taylor Lee,East,Accessories,Sunglasses F,3,254457,32864.9,Standard,Cash
+1064,2023-01-27,Jamie Carter,West,Clothing,Dress K,6,279552,60749.7,Express,Debit Card
+1065,2023-06-28,Alex Morgan,West,Electronics,Smartwatch S,3,171093,15846.03,Express,Credit Card
+1066,2023-07-05,Jamie Carter,West,Electronics,Camera C,4,280284,77773.0,Express,Credit Card
+1067,2023-01-09,Jamie Carter,North,Accessories,Belt E,5,212970,47881.84,Standard,Credit Card
+1068,2023-01-15,Alex Morgan,West,Clothing,Jacket Z,5,261825,33898.76,Standard,Debit Card
+1069,2025-02-27,Alex Morgan,West,Furniture,Desk B,6,405540,93996.02,Express,Credit Card
+1070,2024-02-12,Taylor Lee,East,Clothing,Dress K,5,232890,39056.37,Express,Debit Card
+1071,2024-01-13,Jamie Carter,East,Furniture,Bookshelf L,12,434256,58510.54,Express,Credit Card
+1072,2025-05-05,Taylor Lee,West,Furniture,Sofa H,6,388980,56576.98,Express,Credit Card
+1073,2024-06-28,Alex Morgan,North,Furniture,Chair Set,9,862389,134917.53,Express,Cash
+1074,2025-04-09,Taylor Lee,West,Accessories,Belt E,4,158960,15556.51,Standard,Cash
+1075,2023-08-07,Morgan Scott,North,Furniture,Chair Set,13,218296,63628.65,Express,Cash
+1076,2024-07-11,Chris Evans,West,Accessories,Bag A,8,423776,81799.7,Express,Cash
+1077,2023-08-18,Morgan Scott,North,Furniture,Bookshelf L,2,136140,9880.49,Standard,Debit Card
+1078,2023-03-31,Morgan Scott,West,Electronics,Laptop X,7,17437,4407.7,Standard,Credit Card
+1079,2024-05-21,Taylor Lee,East,Electronics,Camera C,4,176052,38440.51,Standard,Debit Card
+1080,2024-09-15,Taylor Lee,North,Accessories,Bag A,11,238568,34930.71,Express,Credit Card
+1081,2024-11-05,Chris Evans,North,Clothing,Pants R,9,28476,4698.53,Standard,Debit Card
+1082,2023-07-19,Alex Morgan,East,Clothing,Dress K,2,156560,27766.08,Standard,Debit Card
+1083,2025-02-25,Taylor Lee,North,Accessories,Watch W,9,459234,107235.68,Express,Debit Card
+1084,2025-03-22,Jamie Carter,West,Electronics,Phone Y,13,282594,62264.93,Standard,Debit Card
+1085,2024-03-19,Taylor Lee,West,Electronics,Tablet Z,3,208350,32135.16,Express,Cash
+1086,2025-04-23,Chris Evans,South,Accessories,Watch W,11,314809,24100.77,Express,Cash
+1087,2024-10-16,Chris Evans,West,Electronics,Camera C,10,51510,4043.3,Standard,Cash
+1088,2024-02-27,Jamie Carter,East,Clothing,Pants R,9,587349,112738.15,Standard,Credit Card
+1089,2025-02-08,Chris Evans,East,Accessories,Wallet V,7,130676,37389.77,Express,Credit Card
+1090,2023-05-18,Jordan Brown,West,Electronics,Laptop X,4,318908,67641.84,Standard,Cash
+1091,2024-06-08,Alex Morgan,North,Electronics,Smartwatch S,12,898176,127750.39,Standard,Credit Card
+1092,2023-04-06,Morgan Scott,North,Furniture,Desk B,12,1002456,133610.76,Standard,Credit Card
+1093,2023-08-29,Chris Evans,East,Electronics,Camera C,7,248570,60943.93,Standard,Credit Card
+1094,2024-08-07,Alex Morgan,South,Clothing,Pants R,5,365920,64199.74,Standard,Credit Card
+1095,2023-01-31,Taylor Lee,South,Accessories,Watch W,4,272072,64551.32,Express,Cash
+1096,2024-09-20,Morgan Scott,East,Electronics,Camera C,8,285824,52256.08,Express,Cash
+1097,2023-09-21,Jamie Carter,North,Clothing,Dress K,4,219584,30772.23,Express,Credit Card
+1098,2023-04-19,Taylor Lee,East,Furniture,Chair Set,8,31568,8503.26,Standard,Debit Card
+1099,2025-03-22,Jordan Brown,West,Accessories,Belt E,13,686452,140148.98,Express,Cash
+1100,2024-09-13,Morgan Scott,South,Clothing,Jacket Z,11,145145,16712.84,Express,Cash
+1101,2024-09-09,Jordan Brown,West,Furniture,Chair Set,1,16510,4441.61,Express,Debit Card
+1102,2024-06-22,Morgan Scott,North,Furniture,Sofa H,7,669998,65646.55,Standard,Credit Card
+1103,2024-09-08,Jordan Brown,East,Furniture,Sofa H,12,18576,2812.76,Standard,Credit Card
+1104,2024-02-17,Morgan Scott,West,Accessories,Bag A,11,931425,236652.87,Standard,Debit Card
+1105,2025-04-20,Jordan Brown,South,Clothing,Jacket Z,13,457808,116570.84,Standard,Debit Card
+1106,2025-03-31,Jordan Brown,South,Furniture,Table T,1,20871,5919.19,Standard,Debit Card
+1107,2024-02-28,Morgan Scott,North,Furniture,Chair Set,6,366240,99628.54,Express,Cash
+1108,2024-01-02,Morgan Scott,East,Furniture,Sofa H,3,75171,17239.19,Express,Cash
+1109,2024-02-18,Chris Evans,South,Furniture,Desk B,1,86902,11270.58,Express,Cash
+1110,2025-08-21,Alex Morgan,North,Clothing,Jacket Z,8,324064,96987.88,Express,Debit Card
+1111,2024-11-21,Alex Morgan,North,Clothing,Shirt P,12,503676,86628.16,Express,Credit Card
+1112,2024-03-20,Chris Evans,South,Electronics,Smartwatch S,10,110720,16767.19,Standard,Debit Card
+1113,2024-03-17,Alex Morgan,South,Electronics,Tablet Z,2,52234,7187.66,Standard,Cash
+1114,2023-10-12,Chris Evans,South,Clothing,Jacket Z,12,367452,98368.99,Express,Debit Card
+1115,2023-10-26,Alex Morgan,North,Clothing,Jacket Z,9,134541,34799.12,Standard,Credit Card
+1116,2023-11-04,Alex Morgan,North,Electronics,Laptop X,13,1136707,300136.38,Standard,Credit Card
+1117,2023-01-11,Jamie Carter,East,Electronics,Camera C,5,34090,4466.52,Standard,Debit Card
+1118,2025-02-03,Chris Evans,East,Clothing,Shoes Q,4,168744,16428.33,Standard,Cash
+1119,2025-03-07,Taylor Lee,South,Accessories,Watch W,6,194676,31828.36,Express,Credit Card
+1120,2025-03-11,Jordan Brown,East,Furniture,Chair Set,7,233842,55346.3,Standard,Cash
+1121,2025-08-02,Taylor Lee,West,Accessories,Sunglasses F,12,188460,56019.47,Standard,Debit Card
+1122,2024-04-30,Jamie Carter,East,Accessories,Watch W,10,287570,21083.16,Standard,Credit Card
+1123,2024-02-27,Jordan Brown,West,Accessories,Watch W,3,189723,35063.08,Standard,Cash
+1124,2025-01-29,Taylor Lee,East,Accessories,Wallet V,8,521344,152749.46,Standard,Cash
+1125,2025-08-16,Chris Evans,North,Accessories,Sunglasses F,4,159928,11954.44,Standard,Debit Card
+1126,2025-05-05,Taylor Lee,North,Accessories,Wallet V,14,1364860,148655.03,Express,Cash
+1127,2024-11-16,Morgan Scott,West,Clothing,Pants R,8,28704,6753.29,Express,Cash
+1128,2025-03-12,Jordan Brown,South,Electronics,Camera C,12,480276,77510.55,Standard,Cash
+1129,2024-12-05,Taylor Lee,North,Accessories,Wallet V,5,420635,124193.23,Express,Cash
+1130,2024-08-05,Morgan Scott,East,Accessories,Watch W,2,25750,1369.34,Express,Cash
+1131,2023-10-24,Alex Morgan,East,Electronics,Phone Y,9,795870,114004.4,Express,Debit Card
+1132,2023-02-08,Alex Morgan,East,Clothing,Dress K,5,430815,47562.99,Standard,Credit Card
+1133,2024-06-28,Taylor Lee,South,Furniture,Desk B,10,302580,32187.57,Express,Debit Card
+1134,2025-02-13,Alex Morgan,West,Furniture,Table T,1,9071,1160.35,Express,Credit Card
+1135,2025-03-14,Alex Morgan,South,Clothing,Jacket Z,5,207025,51838.04,Standard,Credit Card
+1136,2025-01-26,Chris Evans,East,Furniture,Bookshelf L,3,165774,29154.73,Express,Credit Card
+1137,2024-05-11,Chris Evans,South,Accessories,Belt E,15,459045,86738.6,Express,Debit Card
+1138,2024-03-22,Jordan Brown,South,Furniture,Bookshelf L,1,42239,10880.13,Standard,Debit Card
+1139,2023-10-02,Alex Morgan,East,Electronics,Phone Y,4,245084,66343.69,Standard,Credit Card
+1140,2023-04-30,Morgan Scott,South,Clothing,Dress K,6,524190,26823.36,Express,Credit Card
+1141,2024-01-02,Alex Morgan,East,Electronics,Tablet Z,6,332910,79354.01,Express,Credit Card
+1142,2025-08-08,Chris Evans,East,Clothing,Shirt P,13,261560,56234.07,Express,Cash
+1143,2025-04-14,Chris Evans,West,Accessories,Bag A,2,63266,16505.21,Standard,Cash
+1144,2024-04-27,Chris Evans,North,Accessories,Belt E,7,31437,2317.28,Express,Debit Card
+1145,2025-06-07,Jamie Carter,West,Clothing,Shirt P,2,197738,54385.95,Standard,Credit Card
+1146,2025-09-22,Chris Evans,South,Furniture,Table T,14,771008,61283.29,Express,Cash
+1147,2023-10-06,Alex Morgan,South,Furniture,Table T,8,529096,86839.37,Standard,Cash
+1148,2025-04-12,Morgan Scott,East,Furniture,Table T,3,243504,42470.76,Express,Debit Card
+1149,2024-08-08,Morgan Scott,South,Accessories,Bag A,14,638302,104938.1,Standard,Cash
+1150,2023-11-07,Morgan Scott,South,Electronics,Phone Y,8,167840,32924.15,Standard,Credit Card
+1151,2025-07-31,Morgan Scott,West,Clothing,Shirt P,7,32025,2257.32,Standard,Credit Card
+1152,2023-05-21,Morgan Scott,North,Furniture,Chair Set,4,350160,74780.88,Standard,Debit Card
+1153,2024-05-09,Taylor Lee,North,Furniture,Table T,1,84490,9757.14,Standard,Cash
+1154,2024-12-02,Morgan Scott,North,Electronics,Tablet Z,3,54585,11400.9,Standard,Credit Card
+1155,2025-06-17,Taylor Lee,North,Clothing,Dress K,14,649068,126031.36,Standard,Debit Card
+1156,2023-05-31,Alex Morgan,East,Furniture,Table T,5,334670,46491.37,Express,Cash
+1157,2024-08-13,Taylor Lee,East,Electronics,Laptop X,4,303516,15959.46,Express,Debit Card
+1158,2024-08-12,Jordan Brown,West,Clothing,Pants R,3,119175,11982.14,Standard,Credit Card
+1159,2023-02-05,Chris Evans,West,Clothing,Pants R,7,352674,83125.29,Express,Credit Card
+1160,2025-04-17,Alex Morgan,North,Clothing,Dress K,2,95678,27775.08,Standard,Debit Card
+1161,2025-08-06,Alex Morgan,West,Furniture,Bookshelf L,11,325897,46508.06,Express,Credit Card
+1162,2024-09-26,Chris Evans,South,Accessories,Watch W,15,739875,91265.26,Express,Credit Card
+1163,2024-02-22,Morgan Scott,North,Furniture,Table T,12,573072,157290.8,Standard,Debit Card
+1164,2025-01-31,Taylor Lee,North,Clothing,Shirt P,11,566643,31986.46,Express,Debit Card
+1165,2025-07-24,Jamie Carter,North,Furniture,Chair Set,4,41036,4408.21,Express,Credit Card
+1166,2023-01-29,Chris Evans,South,Clothing,Shoes Q,5,370540,74166.51,Express,Credit Card
+1167,2023-04-04,Jordan Brown,South,Furniture,Sofa H,9,14535,3774.3,Standard,Credit Card
+1168,2024-11-01,Chris Evans,West,Clothing,Dress K,10,504940,27477.36,Express,Debit Card
+1169,2024-11-18,Jamie Carter,West,Electronics,Camera C,4,113616,26486.92,Express,Cash
+1170,2025-02-23,Taylor Lee,North,Accessories,Wallet V,1,87038,22931.32,Standard,Debit Card
+1171,2023-11-01,Taylor Lee,East,Electronics,Camera C,10,67810,4790.8,Express,Credit Card
+1172,2025-03-10,Morgan Scott,East,Accessories,Bag A,1,13881,2938.48,Express,Cash
+1173,2024-11-28,Taylor Lee,East,Furniture,Desk B,15,1233375,367841.0,Express,Cash
+1174,2023-12-21,Chris Evans,West,Accessories,Sunglasses F,5,426430,125880.35,Standard,Debit Card
+1175,2023-12-31,Jordan Brown,East,Accessories,Wallet V,14,871416,212228.27,Express,Credit Card
+1176,2025-07-09,Jamie Carter,North,Clothing,Shoes Q,2,168022,9693.73,Standard,Cash
+1177,2025-05-23,Chris Evans,East,Electronics,Smartwatch S,2,197184,14926.31,Standard,Debit Card
+1178,2025-04-06,Jordan Brown,East,Furniture,Bookshelf L,7,443170,63622.38,Standard,Debit Card
+1179,2025-02-05,Morgan Scott,West,Furniture,Bookshelf L,9,261729,52295.21,Standard,Debit Card
+1180,2025-05-24,Morgan Scott,South,Clothing,Shoes Q,7,307104,80230.49,Standard,Debit Card
+1181,2025-08-15,Chris Evans,West,Furniture,Bookshelf L,2,63212,9780.3,Standard,Credit Card
+1182,2023-03-29,Morgan Scott,East,Electronics,Tablet Z,13,891189,90514.23,Standard,Debit Card
+1183,2023-01-13,Alex Morgan,North,Furniture,Desk B,12,809952,62807.03,Express,Credit Card
+1184,2023-01-15,Jordan Brown,South,Electronics,Tablet Z,3,96843,25903.73,Express,Debit Card
+1185,2023-03-11,Morgan Scott,South,Clothing,Jacket Z,9,700272,127577.89,Standard,Cash
+1186,2023-01-01,Jordan Brown,West,Electronics,Smartwatch S,9,475317,63280.44,Standard,Debit Card
+1187,2024-01-24,Jordan Brown,South,Clothing,Shoes Q,4,383780,95600.93,Express,Debit Card
+1188,2023-09-05,Alex Morgan,North,Furniture,Chair Set,4,215360,61659.72,Standard,Debit Card
+1189,2023-06-22,Chris Evans,South,Electronics,Tablet Z,14,771190,194492.46,Express,Cash
+1190,2024-09-05,Taylor Lee,South,Accessories,Sunglasses F,10,323960,54351.59,Express,Credit Card
+1191,2025-02-18,Chris Evans,North,Accessories,Watch W,12,314052,51753.08,Standard,Cash
+1192,2024-07-13,Jordan Brown,East,Clothing,Shirt P,13,61191,9980.45,Express,Cash
+1193,2024-04-28,Morgan Scott,East,Electronics,Laptop X,15,815250,241801.32,Standard,Cash
+1194,2023-09-16,Taylor Lee,South,Accessories,Bag A,9,550413,143785.41,Standard,Cash
+1195,2024-06-05,Morgan Scott,North,Electronics,Smartwatch S,1,2722,321.32,Standard,Credit Card
+1196,2024-04-27,Alex Morgan,West,Furniture,Sofa H,11,371800,53730.52,Express,Credit Card
+1197,2023-11-23,Jordan Brown,South,Electronics,Smartwatch S,13,442962,69007.83,Express,Debit Card
+1198,2023-06-19,Chris Evans,East,Accessories,Watch W,9,336546,84161.79,Standard,Cash
+1199,2025-09-14,Chris Evans,East,Accessories,Bag A,4,346032,74749.1,Express,Cash
+1200,2025-08-18,Taylor Lee,South,Accessories,Sunglasses F,8,732280,129795.5,Standard,Credit Card
+1201,2025-05-09,Alex Morgan,South,Electronics,Phone Y,14,1109612,143038.23,Express,Cash
+1202,2023-03-29,Alex Morgan,South,Furniture,Table T,2,20538,4708.97,Express,Cash
+1203,2024-09-03,Taylor Lee,East,Accessories,Watch W,12,891108,136615.27,Standard,Cash
+1204,2023-10-03,Chris Evans,East,Clothing,Pants R,9,173286,38166.29,Express,Credit Card
+1205,2023-07-30,Taylor Lee,South,Electronics,Laptop X,2,40900,8950.74,Express,Credit Card
+1206,2023-02-11,Morgan Scott,South,Clothing,Shoes Q,14,481782,79922.7,Express,Credit Card
+1207,2024-07-20,Taylor Lee,West,Clothing,Shoes Q,12,649056,173962.97,Express,Debit Card
+1208,2024-07-02,Jamie Carter,West,Furniture,Sofa H,11,143616,28467.65,Standard,Cash
+1209,2024-08-01,Jordan Brown,North,Furniture,Table T,13,30836,8927.21,Express,Debit Card
+1210,2023-03-29,Alex Morgan,West,Clothing,Jacket Z,13,946504,270748.09,Standard,Credit Card
+1211,2023-02-03,Jamie Carter,North,Clothing,Shirt P,4,286280,52603.5,Express,Credit Card
+1212,2024-09-17,Jordan Brown,North,Accessories,Watch W,9,456399,94360.25,Express,Credit Card
+1213,2023-11-01,Morgan Scott,North,Accessories,Wallet V,1,1829,304.66,Standard,Debit Card
+1214,2025-05-31,Taylor Lee,East,Accessories,Belt E,7,242648,52129.07,Standard,Debit Card
+1215,2024-07-27,Jordan Brown,South,Accessories,Bag A,8,126888,9134.1,Standard,Credit Card
+1216,2025-07-16,Morgan Scott,South,Clothing,Jacket Z,3,235743,67413.66,Express,Credit Card
+1217,2024-01-06,Chris Evans,North,Furniture,Table T,7,661661,91943.34,Standard,Debit Card
+1218,2024-07-03,Morgan Scott,South,Furniture,Desk B,8,275944,51061.64,Standard,Cash
+1219,2024-06-04,Taylor Lee,South,Accessories,Watch W,7,221585,24663.0,Express,Debit Card
+1220,2023-03-23,Jordan Brown,North,Electronics,Camera C,14,752570,198966.76,Express,Cash
+1221,2023-04-13,Chris Evans,East,Accessories,Belt E,4,148680,26832.57,Standard,Cash
+1222,2024-09-16,Jordan Brown,North,Electronics,Smartwatch S,8,783320,71876.55,Express,Debit Card
+1223,2024-06-23,Taylor Lee,North,Electronics,Tablet Z,12,1058580,181242.06,Standard,Debit Card
+1224,2025-01-18,Morgan Scott,East,Clothing,Pants R,13,563160,138419.53,Standard,Debit Card
+1225,2023-12-19,Chris Evans,South,Furniture,Sofa H,12,920520,202504.22,Express,Credit Card
+1226,2023-07-10,Jordan Brown,South,Accessories,Watch W,1,9392,1419.26,Standard,Debit Card
+1227,2023-06-08,Jamie Carter,West,Clothing,Jacket Z,12,615276,75870.63,Express,Cash
+1228,2023-10-16,Taylor Lee,West,Electronics,Smartwatch S,10,216160,25358.2,Express,Credit Card
+1229,2024-03-28,Jamie Carter,East,Electronics,Smartwatch S,10,732180,127915.03,Standard,Cash
+1230,2023-09-28,Jamie Carter,West,Furniture,Bookshelf L,2,195386,17372.64,Standard,Credit Card
+1231,2025-06-26,Alex Morgan,North,Furniture,Sofa H,12,367932,94127.59,Express,Cash
+1232,2024-04-05,Morgan Scott,North,Clothing,Dress K,7,388584,101693.11,Standard,Credit Card
+1233,2023-01-29,Chris Evans,East,Furniture,Sofa H,2,11138,2606.72,Standard,Credit Card
+1234,2024-10-24,Morgan Scott,North,Furniture,Sofa H,8,312064,44306.89,Express,Cash
+1235,2024-03-15,Alex Morgan,West,Accessories,Watch W,3,274326,16702.39,Standard,Credit Card
+1236,2024-09-02,Chris Evans,East,Furniture,Bookshelf L,15,508095,97106.58,Express,Credit Card
+1237,2025-03-02,Morgan Scott,East,Electronics,Smartwatch S,1,65259,18915.8,Standard,Cash
+1238,2025-04-25,Jordan Brown,North,Furniture,Bookshelf L,3,198405,21328.67,Express,Debit Card
+1239,2025-05-09,Taylor Lee,South,Furniture,Chair Set,3,46293,4227.78,Standard,Cash
+1240,2024-07-25,Morgan Scott,West,Furniture,Table T,12,162468,44480.26,Standard,Credit Card
+1241,2023-04-09,Taylor Lee,West,Clothing,Pants R,9,63738,14088.67,Standard,Credit Card
+1242,2023-11-13,Taylor Lee,West,Furniture,Table T,6,582702,136598.16,Standard,Credit Card
+1243,2024-04-19,Morgan Scott,North,Furniture,Table T,2,29772,7193.67,Standard,Cash
+1244,2023-02-25,Taylor Lee,West,Electronics,Phone Y,1,43452,12905.81,Express,Debit Card
+1245,2024-02-03,Jamie Carter,North,Furniture,Sofa H,9,178335,26411.42,Standard,Debit Card
+1246,2025-09-23,Morgan Scott,East,Electronics,Camera C,2,119888,22412.61,Standard,Credit Card
+1247,2025-05-22,Chris Evans,South,Furniture,Desk B,7,635656,154938.92,Express,Cash
+1248,2025-08-13,Jordan Brown,South,Furniture,Sofa H,1,85914,18389.88,Standard,Cash
+1249,2023-11-26,Jordan Brown,South,Electronics,Tablet Z,8,566568,111007.62,Standard,Debit Card
+1250,2023-03-22,Alex Morgan,South,Accessories,Watch W,9,818586,188212.75,Standard,Debit Card
+1251,2025-07-19,Taylor Lee,North,Clothing,Dress K,6,369468,19763.13,Express,Credit Card
+1252,2025-08-30,Taylor Lee,West,Furniture,Sofa H,6,375276,66785.3,Standard,Cash
+1253,2024-09-02,Taylor Lee,West,Furniture,Sofa H,14,636370,43981.57,Standard,Debit Card
+1254,2024-06-01,Morgan Scott,South,Clothing,Jacket Z,9,276705,45214.57,Express,Credit Card
+1255,2024-09-10,Morgan Scott,North,Clothing,Jacket Z,3,37836,10041.48,Express,Debit Card
+1256,2024-08-13,Chris Evans,West,Clothing,Pants R,10,167780,37038.77,Express,Credit Card
+1257,2023-09-12,Chris Evans,East,Furniture,Table T,2,161854,43789.65,Express,Cash
+1258,2024-05-02,Chris Evans,West,Clothing,Jacket Z,11,269599,41881.36,Standard,Cash
+1259,2025-07-08,Taylor Lee,East,Accessories,Watch W,10,318130,25998.71,Standard,Debit Card
+1260,2025-01-02,Taylor Lee,East,Accessories,Sunglasses F,11,74041,10333.06,Express,Credit Card
+1261,2025-05-02,Alex Morgan,West,Furniture,Sofa H,12,393348,48086.11,Express,Credit Card
+1262,2023-06-18,Chris Evans,North,Electronics,Laptop X,2,97274,23372.97,Standard,Credit Card
+1263,2023-12-22,Morgan Scott,North,Clothing,Shirt P,9,254952,52746.94,Express,Credit Card
+1264,2024-04-04,Chris Evans,West,Furniture,Table T,5,407205,75932.95,Standard,Debit Card
+1265,2025-07-09,Jordan Brown,North,Electronics,Laptop X,2,86320,5133.44,Express,Debit Card
+1266,2024-05-12,Jordan Brown,North,Electronics,Laptop X,8,635640,166934.71,Express,Cash
+1267,2023-08-02,Taylor Lee,West,Accessories,Bag A,2,65768,16739.11,Express,Credit Card
+1268,2025-03-20,Jordan Brown,North,Accessories,Sunglasses F,2,92172,6567.46,Standard,Debit Card
+1269,2024-07-05,Alex Morgan,North,Accessories,Sunglasses F,11,487476,87205.05,Standard,Credit Card
+1270,2025-01-28,Alex Morgan,West,Clothing,Pants R,5,81785,19951.59,Standard,Debit Card
+1271,2024-08-19,Jamie Carter,West,Furniture,Sofa H,8,694048,111063.9,Express,Cash
+1272,2024-03-09,Chris Evans,West,Furniture,Sofa H,15,1390065,167198.05,Standard,Credit Card
+1273,2023-04-16,Jamie Carter,East,Accessories,Bag A,10,900800,138550.86,Standard,Credit Card
+1274,2025-02-01,Morgan Scott,South,Clothing,Jacket Z,12,529524,99885.82,Express,Cash
+1275,2025-09-16,Chris Evans,South,Furniture,Desk B,11,916377,250448.77,Standard,Debit Card
+1276,2024-06-07,Chris Evans,South,Clothing,Jacket Z,10,932430,183754.09,Standard,Debit Card
+1277,2023-12-06,Jordan Brown,North,Furniture,Sofa H,6,544722,138940.06,Express,Cash
+1278,2025-06-24,Alex Morgan,West,Furniture,Table T,7,667135,113892.45,Standard,Debit Card
+1279,2023-11-09,Taylor Lee,North,Electronics,Camera C,5,200520,31120.92,Standard,Credit Card
+1280,2025-02-02,Morgan Scott,North,Accessories,Belt E,3,175920,32038.23,Express,Credit Card
+1281,2024-05-17,Morgan Scott,East,Furniture,Sofa H,9,557334,74867.8,Express,Cash
+1282,2024-09-25,Alex Morgan,West,Accessories,Bag A,3,65631,12460.14,Express,Credit Card
+1283,2024-11-15,Jordan Brown,North,Electronics,Tablet Z,10,903650,144215.03,Express,Debit Card
+1284,2023-08-12,Jamie Carter,West,Electronics,Phone Y,12,371028,73132.72,Standard,Credit Card
+1285,2024-01-10,Alex Morgan,North,Clothing,Pants R,13,343967,17336.15,Standard,Cash
+1286,2024-12-30,Jamie Carter,West,Electronics,Tablet Z,15,1143345,96596.42,Standard,Debit Card
+1287,2025-06-25,Jordan Brown,East,Clothing,Shirt P,9,871767,65892.71,Standard,Credit Card
+1288,2025-07-28,Alex Morgan,West,Clothing,Shoes Q,8,260200,53393.77,Express,Cash
+1289,2024-06-26,Chris Evans,North,Clothing,Shoes Q,5,436875,95413.96,Standard,Cash
+1290,2024-10-25,Taylor Lee,North,Furniture,Desk B,1,38431,9395.39,Express,Credit Card
+1291,2023-05-30,Jordan Brown,West,Clothing,Pants R,12,272568,20509.44,Standard,Cash
+1292,2023-11-11,Chris Evans,East,Furniture,Sofa H,15,574710,133312.0,Express,Debit Card
+1293,2024-01-04,Jordan Brown,West,Electronics,Laptop X,6,291042,21622.63,Standard,Cash
+1294,2025-02-12,Alex Morgan,East,Clothing,Pants R,3,98703,14678.99,Standard,Cash
+1295,2023-06-04,Alex Morgan,North,Electronics,Laptop X,5,352250,44451.89,Express,Debit Card
+1296,2025-09-29,Jamie Carter,South,Accessories,Belt E,8,262976,20073.32,Standard,Debit Card
+1297,2024-12-07,Chris Evans,West,Accessories,Wallet V,10,642210,123295.19,Standard,Cash
+1298,2024-02-24,Taylor Lee,West,Clothing,Dress K,4,331632,35368.79,Express,Cash
+1299,2023-12-23,Morgan Scott,North,Clothing,Shoes Q,6,89982,26705.98,Express,Debit Card

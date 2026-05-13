@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  background: #f4f7fb;
+  color: #1f2a38;
+  line-height: 1.5;
+}
+
+header {
+  background: #76d43b;
+  color: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.8rem;
+}
+
+main {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(17, 32, 66, 0.576);
+}
+
+.panel-header h2 {
+  margin: 0;
+}
+
+.panel-header p {
+  margin: 0.5rem 0 0;
+  color: #4b5563;
+}
+
+.task1-layout,
+.task2-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.map-wrapper,
+.bubbles-wrapper,
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.viz-surface {
+  width: 100%;
+  min-height: 420px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafcff;
+  position: relative;
+}
+
+.viz-surface.narrow {
+  min-height: 260px;
+}
+
+.legend {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legend .swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.timeline-wrapper {
+  margin-top: 1rem;
+}
+
+.controls-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn.primary {
+  background: #0b9176;
+  color: #fff;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.slider {
+  flex: 1;
+  min-height: 60px;
+  position: relative;
+}
+
+.year-label {
+  font-weight: 600;
+}
+
+#hierarchy-chart {
+  min-height: 380px;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #4b5563;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.95);
+  color: #fff;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+
+  header,
+  main {
+    padding: 1rem;
+  }
+
+  .controls-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .slider {
+    width: 100%;
+  }
+}

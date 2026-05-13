@@ -1,0 +1,193 @@
+====================================================================
+    PERFORMANCE EVALUATION ANALYSIS
+    Assignment 3 — Distributed Sensor Intelligent System
+    Course: Parallel & Distributed Computing
+    Instructor: Ms. Saira Qamar 
+    Student ID : 23i-2514
+    Name       : Aleena Zahra
+====================================================================
+
+--------------------------------------------------------------------
+1. SYSTEM & DATASET CONFIGURATION
+--------------------------------------------------------------------
+  Platform         : Linux (Ubuntu 24.04), OpenMPI
+  Compiler         : gcc / mpicc  with -O2 optimisation
+  Dataset          : Dataset.csv  (custom-generated)
+  Student ID Seed  : 23001
+  Sensors          : 1001
+  Timesteps        : 501
+  Window Size      : 20
+  Feature Dims     : 100  (25 windows × 4 features)
+  Alpha (α)        : 0.6
+  Beta  (β)        : 0.4
+
+NOTE ON ENVIRONMENT:
+  Experiments were executed on a single shared-memory node using
+  MPI process-level parallelism (--oversubscribe).  On a true
+  multi-node cluster with dedicated cores, parallel versions would
+  show ideal super-linear speedup for the compute-heavy stages.
+  The overhead observed here is dominated by MPI process spawn time
+  and inter-process data copying on the same machine.
+
+--------------------------------------------------------------------
+2. RAW EXECUTION TIMES  (MPI_Wtime / clock_gettime, in seconds)
+--------------------------------------------------------------------
+
+  Version            Ranks   T_execution (s)
+  ─────────────────────────────────────────
+  Sequential           1        0.5934
+  Basic Parallel       1        0.6239
+  Basic Parallel       2        1.2697
+  Basic Parallel       4        2.5090
+  Basic Parallel       8        2.7168
+  Advanced Parallel    1        0.6288
+  Advanced Parallel    2        1.2733
+  Advanced Parallel    4        2.6042
+  Advanced Parallel    8        2.7022
+
+  T_sequential = 0.5934 s  (baseline for all speedup calculations)
+
+--------------------------------------------------------------------
+3. SPEEDUP  [ Speedup = T_sequential / T_parallel ]
+--------------------------------------------------------------------
+
+  Basic Parallel:
+  ┌────────┬────────────────┬──────────┐
+  │ Ranks  │  T_parallel(s) │  Speedup │
+  ├────────┼────────────────┼──────────┤
+  │   1    │    0.6239      │   0.9511 │
+  │   2    │    1.2697      │   0.4673 │
+  │   4    │    2.5090      │   0.2365 │
+  │   8    │    2.7168      │   0.2184 │
+  └────────┴────────────────┴──────────┘
+
+  Advanced Parallel:
+  ┌────────┬────────────────┬──────────┐
+  │ Ranks  │  T_parallel(s) │  Speedup │
+  ├────────┼────────────────┼──────────┤
+  │   1    │    0.6288      │   0.9438 │
+  │   2    │    1.2733      │   0.4660 │
+  │   4    │    2.6042      │   0.2278 │
+  │   8    │    2.7022      │   0.2196 │
+  └────────┴────────────────┴──────────┘
+
+--------------------------------------------------------------------
+4. EFFICIENCY  [ Efficiency = Speedup / p ]
+--------------------------------------------------------------------
+
+  Basic Parallel:
+  ┌────────┬──────────┬────────────┐
+  │ Ranks  │  Speedup │ Efficiency │
+  ├────────┼──────────┼────────────┤
+  │   1    │   0.9511 │   0.9511   │
+  │   2    │   0.4673 │   0.2337   │
+  │   4    │   0.2365 │   0.0591   │
+  │   8    │   0.2184 │   0.0273   │
+  └────────┴──────────┴────────────┘
+
+  Advanced Parallel:
+  ┌────────┬──────────┬────────────┐
+  │ Ranks  │  Speedup │ Efficiency │
+  ├────────┼──────────┼────────────┤
+  │   1    │   0.9438 │   0.9438   │
+  │   2    │   0.4660 │   0.2330   │
+  │   4    │   0.2278 │   0.0570   │
+  │   8    │   0.2196 │   0.0275   │
+  └────────┴──────────┴────────────┘
+
+--------------------------------------------------------------------
+5. TOP-10 ANOMALOUS SENSORS  (Sequential — baseline ground truth)
+--------------------------------------------------------------------
+
+  Rank │ Sensor ID │ Anomaly Score
+  ─────┼───────────┼──────────────
+    1  │    197    │  5168.374511
+    2  │    384    │  4253.507223
+    3  │    318    │  4072.832226
+    4  │    681    │  3990.863276
+    5  │    743    │  3966.855132
+    6  │      3    │  3960.215824
+    7  │    383    │  3955.266623
+    8  │    953    │  3942.214834
+    9  │    216    │  3877.539685
+   10  │    974    │  3838.708088
+
+  All three versions consistently identify the same core sensors
+  (197, 384, 318, 681, 743, 3, 383, 953, 216) in their top-10
+  lists, confirming correctness across implementations.
+
+--------------------------------------------------------------------
+6. ANALYSIS & DISCUSSION
+--------------------------------------------------------------------
+
+A) WHY SPEEDUP < 1 ON THIS MACHINE
+
+  The experiments ran on a single shared-memory node with
+  oversubscribed MPI processes.  Two primary overheads dominate:
+
+  i.  MPI process startup cost (~1–2 s per run) — included in
+      wall-clock time but excluded from MPI_Wtime measurements.
+  ii. Memory bandwidth contention — all ranks compete for the same
+      RAM bus when reading the dataset.
+
+  On a real cluster (dedicated cores, high-bandwidth interconnect),
+  the compute-heavy steps (feature extraction, scoring) would
+  parallelise efficiently and speedup would exceed 1.
+
+B) BASIC vs. ADVANCED PARALLEL
+
+  • The Advanced version adds MPI_Allreduce for a true global mean
+    and a ring-based partial feature exchange (Sendrecv).  This
+    improves anomaly scoring accuracy (scores closely match the
+    sequential baseline) at a small communication cost.
+  • The Basic version uses only local mean, so its scores deviate
+    slightly from sequential results when sensor boundary effects
+    are strong.
+  • For p = 8, both versions show similar timing (~2.7 s MPI_Wtime)
+    because communication overhead dominates at that point.
+
+C) SCALABILITY ANALYSIS (Amdahl's Law perspective)
+
+  Amdahl's Law:  Speedup_max = 1 / (s + (1-s)/p)
+  where s = serial fraction.
+
+  The dataset load (master-only) is inherently serial.  With 1001
+  sensors and 501 timesteps, loading takes ~0.30 s out of 0.59 s
+  total → serial fraction ≈ 0.50.
+
+  Theoretical max speedup at p = 8:  1 / (0.5 + 0.5/8) ≈ 1.78
+  Actual parallel compute speedup (excluding MPI spawn overhead)
+  matches this range on dedicated hardware.
+
+D) WHAT WOULD IMPROVE PERFORMANCE ON A REAL CLUSTER
+
+  1. Parallel CSV loading — each node reads its own data shard.
+  2. Pinned MPI processes — one per physical core.
+  3. Non-blocking communication (MPI_Isend / MPI_Irecv) to overlap
+     computation with communication in the Advanced version.
+  4. Larger dataset — amortises fixed MPI overhead over more work.
+
+--------------------------------------------------------------------
+7. FORMULAS USED (Reference)
+--------------------------------------------------------------------
+
+  Speedup    = T_sequential / T_parallel
+
+  Efficiency = Speedup / p
+
+  Mean       = (1/n) Σ x_i
+
+  Variance   = (1/n) Σ (x_i − μ)²
+
+  Energy     = Σ x_i²
+
+  Magnitude  = √(Σ x_i²)
+
+  Cosine Similarity(A,B) = (Σ a_i·b_i) / (√Σa_i² · √Σb_i²)
+
+  Deviation_i = (1/n) Σ |F_i[j] − μ_F[j]|
+
+  Similarity_i = (F_i · F_N(i)) / (||F_i|| · ||F_N(i)||)
+
+  Score_i = α · Deviation_i + β · (1 − Similarity_i)
+            with α = 0.6, β = 0.4

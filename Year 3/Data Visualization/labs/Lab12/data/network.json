@@ -1,0 +1,201 @@
+{
+  "nodes": [
+    {
+      "id": "Alice",
+      "group": "AI"
+    },
+    {
+      "id": "Bob",
+      "group": "AI"
+    },
+    {
+      "id": "Clara",
+      "group": "AI"
+    },
+    {
+      "id": "David",
+      "group": "AI"
+    },
+    {
+      "id": "Eve",
+      "group": "AI"
+    },
+    {
+      "id": "Farah",
+      "group": "Systems"
+    },
+    {
+      "id": "Hassan",
+      "group": "Systems"
+    },
+    {
+      "id": "Imran",
+      "group": "Systems"
+    },
+    {
+      "id": "Javeria",
+      "group": "Systems"
+    },
+    {
+      "id": "Kashif",
+      "group": "Systems"
+    },
+    {
+      "id": "Lara",
+      "group": "NLP"
+    },
+    {
+      "id": "Musa",
+      "group": "NLP"
+    },
+    {
+      "id": "Nimra",
+      "group": "NLP"
+    },
+    {
+      "id": "Omar",
+      "group": "NLP"
+    },
+    {
+      "id": "Parveen",
+      "group": "NLP"
+    },
+    {
+      "id": "Qasim",
+      "group": "HCI"
+    },
+    {
+      "id": "Rabia",
+      "group": "HCI"
+    },
+    {
+      "id": "Saad",
+      "group": "HCI"
+    },
+    {
+      "id": "Tariq",
+      "group": "HCI"
+    },
+    {
+      "id": "Urooj",
+      "group": "HCI"
+    }
+  ],
+  "links": [
+    {
+      "source": "Alice",
+      "target": "Bob",
+      "strength": 0.8
+    },
+    {
+      "source": "Alice",
+      "target": "Clara",
+      "strength": 0.6
+    },
+    {
+      "source": "Bob",
+      "target": "David",
+      "strength": 0.7
+    },
+    {
+      "source": "Clara",
+      "target": "Eve",
+      "strength": 0.5
+    },
+    {
+      "source": "David",
+      "target": "Eve",
+      "strength": 0.9
+    },
+    {
+      "source": "Farah",
+      "target": "Hassan",
+      "strength": 0.7
+    },
+    {
+      "source": "Farah",
+      "target": "Imran",
+      "strength": 0.5
+    },
+    {
+      "source": "Hassan",
+      "target": "Kashif",
+      "strength": 0.8
+    },
+    {
+      "source": "Imran",
+      "target": "Javeria",
+      "strength": 0.6
+    },
+    {
+      "source": "Lara",
+      "target": "Musa",
+      "strength": 0.7
+    },
+    {
+      "source": "Lara",
+      "target": "Nimra",
+      "strength": 0.6
+    },
+    {
+      "source": "Musa",
+      "target": "Omar",
+      "strength": 0.8
+    },
+    {
+      "source": "Nimra",
+      "target": "Parveen",
+      "strength": 0.5
+    },
+    {
+      "source": "Qasim",
+      "target": "Rabia",
+      "strength": 0.8
+    },
+    {
+      "source": "Qasim",
+      "target": "Saad",
+      "strength": 0.7
+    },
+    {
+      "source": "Rabia",
+      "target": "Tariq",
+      "strength": 0.6
+    },
+    {
+      "source": "Saad",
+      "target": "Urooj",
+      "strength": 0.5
+    },
+    {
+      "source": "Alice",
+      "target": "Farah",
+      "strength": 0.3
+    },
+    {
+      "source": "Bob",
+      "target": "Lara",
+      "strength": 0.4
+    },
+    {
+      "source": "Clara",
+      "target": "Qasim",
+      "strength": 0.4
+    },
+    {
+      "source": "David",
+      "target": "Hassan",
+      "strength": 0.2
+    },
+    {
+      "source": "Eve",
+      "target": "Nimra",
+      "strength": 0.3
+    },
+    {
+      "source": "Farah",
+      "target": "Qasim",
+      "strength": 0.3
+    }
+  ]
+}

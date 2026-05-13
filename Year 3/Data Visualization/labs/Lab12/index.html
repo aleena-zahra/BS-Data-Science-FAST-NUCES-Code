@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lab 12 - D3 Interactions</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0 16px 32px;
+      background: #fafafa;
+      color: #222;
+    }
+    header {
+      padding: 16px 0 8px;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin: 0 0 4px;
+    }
+    #status {
+      font-size: 0.85rem;
+      padding: 8px 10px;
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      max-width: 480px;
+      white-space: pre-line;
+    }
+    section {
+      margin-top: 24px;
+      padding-top: 8px;
+      border-top: 1px solid #e0e0e0;
+    }
+    section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+    .chart-container {
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      padding: 8px;
+      overflow: hidden;
+    }
+    .legend {
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .legend rect {
+      stroke: #666;
+      stroke-width: 0.5;
+    }
+    .tooltip {
+      position: absolute;
+      pointer-events: none;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 4px 6px;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      transform: translate(-50%, -120%);
+    }
+    #q3-search-wrapper {
+      margin-bottom: 6px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #q3-search {
+      padding: 4px 6px;
+      font-size: 0.85rem;
+    }
+    #q3-breadcrumbs {
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+    #q3-breadcrumbs span {
+      cursor: pointer;
+      color: #1976d2;
+    }
+    #q3-breadcrumbs span:not(:last-child)::after {
+      content: " › ";
+      color: #555;
+    }
+    #q4-controls {
+      margin-bottom: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    #q4-controls button {
+      padding: 4px 8px;
+    }
+    #q4-threshold {
+      width: 160px;
+    }
+    #q4-status-text {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lab 12 – D3 Interactions</h1>
+    <div id="status">Status:\nInitializing…</div>
+  </header>
+
+  <section id="q1">
+    <h2>Q1 – Weather Multi-Series Line Chart</h2>
+    <div class="chart-container">
+      <svg id="q1-svg" width="900" height="420"></svg>
+    </div>
+  </section>
+
+  <section id="q2">
+    <h2>Q2 – Network Force-Directed Graph</h2>
+    <div class="chart-container">
+      <svg id="q2-svg" width="900" height="480"></svg>
+    </div>
+  </section>
+
+  <section id="q3">
+    <h2>Q3 – Software Hierarchy</h2>
+    <div id="q3-search-wrapper">
+      <label for="q3-search">Search:</label>
+      <input id="q3-search" type="text" placeholder="Type module/file name and press Enter" />
+      <span id="q3-search-info"></span>
+    </div>
+    <div class="chart-container">
+      <svg id="q3-svg" width="900" height="480"></svg>
+      <div id="q3-breadcrumbs"></div>
+    </div>
+  </section>
+
+  <section id="q4">
+    <h2>Q4 – Real-Time Dashboard</h2>
+    <div id="q4-controls">
+      <button id="q4-toggle">Pause</button>
+      <label>Threshold:
+        <input id="q4-threshold" type="range" min="0" max="100" step="1" value="50" />
+        <span id="q4-threshold-value">50</span>
+      </label>
+      <span>Streaming: <span id="q4-status-text">Running</span></span>
+      <span>Latest Mean: <span id="q4-mean">–</span></span>
+    </div>
+    <div class="chart-container">
+      <svg id="q4-bars-svg" width="900" height="260"></svg>
+    </div>
+    <div class="chart-container" style="margin-top:8px;">
+      <svg id="q4-line-svg" width="900" height="220"></svg>
+    </div>
+  </section>
+
+  <div id="q-tooltip" class="tooltip" style="display:none;"></div>
+
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
+
+

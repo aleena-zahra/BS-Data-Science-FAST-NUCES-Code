@@ -1,0 +1,5 @@
+What is the capital of France?;Paris;Berlin;Madrid;Rome;a
+Which programming language is known for its simplicity?;Java;C++;Python;JavaScript;c
+What is the result of 2 + 2?;3;4;5;6;b
+In which year was the first computer invented?;1945;1950;1970;1985;a
+What is the command to initialize a Git repository?;git start;git begin;git init;git create;c

@@ -1,0 +1,336 @@
+
+PERFORMANCE EVALUATION ANALYSIS
+NLP Pipeline – Sequential vs Threads vs OpenMP
+Assignment 2
+
+Aleena Zahra
+23i-2514
+
+1. PARALLEL LIFE CYCLE DESIGN
+
+PHASE 1 – PROBLEM UNDERSTANDING
+Expensive Computation Tasks Identified:
+
+(a) Tokenisation & Stop Word Removal
+    Scans through all words in all documents (40,000 to 70,000 reviews each).
+    Total words processed = 400,000 to 700,000.
+    Documents are independent; hence, parallel.
+
+(b) Document Frequency Computation (IDF)
+    Involves iterating through all documents.
+    Each document is independent; hence, parallel.
+
+(c) TF-IDF Computation
+    Involves one floating point division and one multiplication for each unique term for each document.
+    This computation is data parallel.
+
+(d) K-Means Clustering
+    Assignment Step: Computation of distance from K centroids for all N documents.
+    Each document involves computation of N*K*FEAT multiplications.
+    Re-computation Step: N additions for each of FEAT features.
+    This computation is embarrassingly parallel, except for a small serial step.
+
+(e) Cosine Similarity Search
+    Involves iterating through all 100 pairs for each of the TF-IDF vectors.
+    Each pair is independent; hence, parallel.
+
+    Another task that may be included in the list of tasks to be executed in parallel:
+      Vocabulary/inverted index construction. A word -> document_list mapping would facilitate parallel phrase search and relevance ranking.
+      Each thread would create a local index, and they would be combined at the end.
+
+PHASE 2 – DECOMPOSITION STRATEGY
+  Decomposition strategy chosen:
+    DATA DECOMPOSITION (horizontal partitioning)
+
+  The set of documents in the array of size N would be divided into contiguous segments of size approximately N/T.
+  Each thread would be allocated a segment of the array to process independently.
+
+  The segments to be processed by each thread would be:
+      start_i = i * (N/T) + min(i, N%T)
+      end_i = start_i + N/T + (i < N%T ? 1 : 0)
+
+  This would ensure perfect balancing even when N % T ≠ 0.
+
+  The K-Means centroid arrays of size K * FEAT would be replicated for the threads, 
+  read-only for each thread during assignment and written locally for each thread
+  during accumulation.
+
+PHASE 3 – ASSIGNMENT STRATEGY
+
+  Number of threads selected:
+  - Thread version: hardware_concurrency() capped at most 8 
+    (an empirical optimum on quad/octa-core machines).
+  - OpenMP version: value returned by omp_get_max_threads(), equal to hardware value.
+  Worker tasks:
+    - Phase 1: Each thread processes docs[start..end], contributing to thread-local data structure localFreq[tid].
+    - Phase 2: Each thread computes tfidf[start..end] using shared but immutable global IDF data structure.
+    - Phase 3a: Each thread computes cluster[start..end].
+    - Phase 3b: Each thread computes localSum[tid][k][f] and localCnt[tid][k].
+    - Phase 4: Each thread computes simScores[start..end].
+
+PHASE 4 – ORCHESTRATION STRATEGY
+
+  Merging local results:
+    - After each parallel phase, we merge thread-local data in O(V) or O(K*FEAT) iterations in the main thread:
+          globalFreq[w] = Σ_t localFreq[t][w]
+          newC[k][f] = Σ_t localSum[t][k][f]
+          cnt[k] = Σ_t localCnt[t][k]
+    - The cost of this operation is negligible because we're merging O(V) or O(K*FEAT) data structures, much smaller than O(N).
+
+  Centroid update strategy for K-MEANS:
+  - 1. Broadcast current centroids: no need to lock data structure because it's shared read-only access.
+  - 2. Each thread computes partial sums in thread-local data structure: partialSum[k][f].
+  - 3. Main thread sums partial sums: newC[k][f] = Σ_t partialSum[k][f]
+  - 4. Main thread updates cnt[k] = Σ_t localCnt[k]
+  - 5. Main thread updates globalFreq[w] = Σ_t localFreq[w]
+
+PHASE 5 – COMMUNICATION STRATEGY
+
+  Shared variables and access mechanisms:
+
+  Variable              Access Pattern          Protection used
+  .....................................................................................................................
+  docs[]                Read-only               None needed
+  docTF_raw[i]          One writer per index i  Partition-based
+                               (by range assignment)   (no lock)
+  docTokens[i]          One writer per index i  Partition-based
+  tfidf[i]                    One writer per index i  Partition-based
+  X[i][]                      One writer per index i  Partition-based
+  cluster[i]                One writer per index i  Partition-based
+  localFreq[tid]         Fully thread-private    None needed
+  localSum[tid][][]     Fully thread-private    None needed
+  localCnt[tid][]         Fully thread-private    None needed
+  globalFreq             Written only serially   Serial section
+  idf                          Written only serially   Serial section
+  centroids[][]         Read parallel / write      Serial section
+                               serially after join
+  simScores[i]          One writer per index i  Partition-based
+
+
+OpenMP critical sections used:
+    #pragma omp critical is used to protect the parallel merge of
+    thread-local frequency maps into globalFreq in the frequency counting step.
+
+Race Conditions and Prevention:
+    (1) globalFreq accumulation: 
+      This is a potential race condition since multiple threads are updating the same word key in globalFreq. 
+      This is prevented by merging the parallel computation of frequency maps into globalFreq in a serial fashion.
+
+    (2) docTF_raw[i] write: 
+      This is a potential race condition since two or more threads might be updating the same index in docTF_raw. 
+      his is prevented by strict range partitioning, i.e., every index is associated with exactly one chunk.
+
+    (3) K-Means centroid write: 
+      This is a potential race condition since multiple threads are updating shared centroid arrays. 
+      This is prevented by merging the parallel computation of centroid arrays in a serial fashion.
+
+    (4) Cosine similarity results: 
+     The computation of simScores[i] is performed by the owner of index i. 
+     Hence, there is no race since no two threads share the computation.
+
+2. PERFORMANCE MEASUREMENTS
+
+  Dataset size   :  40000 + 232514% 30000 = 62514 documents
+  Machine        : 8 cores / threads
+
+┌──────────────────┬───────
+│ Version          │ Time (sec)     │ Speedup  │
+├──────────────────┼───────|
+│ Sequential     │   0.2437        │   1.00×      │
+│ std::thread     │   0.1903        │   1.28×      │
+│ OpenMP        │   0.3423        │   0.71×      │
+└──────────────────┴───────┘
+
+3. ANALYSIS AND DISCUSSION
+
+  Sequential baseline:
+  All phases of the pipeline are executed on a single core. 
+  The cost model is dominated by the K-Means inner loop 
+  (cost scales as N x K x FEAT per iteration), 
+  followed by tokenization.
+  
+  std::thread version:
+    The work is divided into T equal-sized pieces before threads are launched. 
+    The cost of launching threads is paid once for each phase. 
+    No synchronization is used in the inner loops, as they are computationally expensive. 
+    The speedup is modest, limited by the number of physical cores. 
+    The dataset size being small means the work per thread is small
+    So parallelism only partially offsets the thread overhead
+    
+    
+  OpenMP version:
+    This version uses a thread pool, so the cost of launching threads for each phase is eliminated. 
+    This version also includes a form of dynamic scheduling (chunk size 256), 
+    which helps improve performance as the length of each review can vary (per-document cost).
+    But in this implementation the overhead costs increases the computation time a lot, so much that it takes longer than sequential version.
+    
+  Scalability:
+    Both parallel versions dont scale well for the tokenisation
+    This is because the thread overhead is more than the benefit due to parallelism
+    As the document is too small with a tiny vocab
+    TF-IDF, and similarity phases are embarrassingly parallel
+    K-Means scales somewhat less due to the serial centroid
+    merge, but since K×FEAT (5×100 = 500 values) < number of docs this
+    serial fraction is negligible (Amdahl fraction < 0.1%).
+
+  Bottlenecks:
+    - The vocab is 21 words this means that k means and tf idf calculations are low cost (sparse vectors/matrices)
+    - The workload is memory light and insuffiecent computation for parallelism to overcome thread cost in the case of openMP
+    - Memory bandwidth: There are a lot of documents which consume memory. 
+    - Cache pressure may limit linear scaling beyond 4 threads.
+
+
+4. COMPILE AND RUN INSTRUCTIONS
+
+
+  Generate dataset
+  g++ -O2 -o gen dataset_gen.cpp
+  ./gen > Dataset.txt       (enter Student ID when prompted)
+
+  Sequential version
+  g++ -O2 -std=c++14 -o v1  Sequential_version.cpp
+  ./v1
+
+  thread version
+  g++ -O2 -std=c++14 -o v2  Thread_version.cpp
+  ./v2
+
+  OpenMP
+  g++ -O2 -std=c++14 -fopenmp  -o v3  OpenMp_version.cpp
+  ./v3
+
+
+0000000000000000000000000000000000000
+SEQUENTIAL_VERSION RESULTS:
+0000000000000000000000000000000000000
+
+  Vocabulary size: 21
+
+  Top 10 most frequent words:
+    awful : 3729
+    training : 3721
+    terrible : 3683
+    excellent : 3678
+    good : 3678
+    speed : 3678
+    bad : 3654
+    great : 3643
+    software : 3642
+    algorithm : 3641
+
+  TF-IDF computed for all documents.
+
+  K-Means Clusters (K=5, 10 iterations):
+    Cluster 1 -> 1503 documents
+    Cluster 2 -> 1406 documents
+    Cluster 3 -> 1764 documents
+    Cluster 4 -> 1791 documents
+    Cluster 5 -> 1188 documents
+
+  Cosine Similarity (100 random pairs) [sample of 10 shown]:
+    Doc 2865 & Doc 6095 => similarity = 0.5490
+    Doc 7274 & Doc 1403 => similarity = 0.1810
+    Doc 5601 & Doc 5966 => similarity = 0.0724
+    Doc 4580 & Doc 4567 => similarity = 0.1938
+    Doc 1193 & Doc 3411 => similarity = 0.0000
+    Doc 1193 & Doc 765 => similarity = 0.1184
+    Doc 444 & Doc 3514 => similarity = 0.2862
+    Doc 6627 & Doc 2553 => similarity = 0.4015
+    Doc 4599 & Doc 1093 => similarity = 0.2413
+    Doc 5418 & Doc 4980 => similarity = 0.6327
+    (90 more pairs computed)
+    Average similarity: 0.3562
+
+  Sequential Execution Time: 0.2437 seconds
+
+00000000000000000000000000000000000
+THREAD_VERESION RESULTS
+00000000000000000000000000000000000
+
+  Threads: 8
+
+  Vocabulary size: 21
+
+  Top 10 most frequent words:
+    awful : 3684
+    training : 3664
+    speed : 3632
+    excellent : 3632
+    good : 3630
+    terrible : 3620
+    algorithm : 3598
+    bad : 3596
+    great : 3586
+    software : 3585
+
+  TF-IDF computed for all documents.
+
+  K-Means Clusters (K=5, 10 iterations):
+    Cluster 1 -> 1475 documents
+    Cluster 2 -> 1420 documents
+    Cluster 3 -> 1709 documents
+    Cluster 4 -> 1763 documents
+    Cluster 5 -> 1175 documents
+
+  Cosine Similarity (100 pairs) [sample of 10 shown]:
+    Doc 2824 & Doc 6007 => similarity = 0.336845
+    Doc 7170 & Doc 1383 => similarity = 0.204560
+    Doc 5520 & Doc 5880 => similarity = 0.000000
+    Doc 4515 & Doc 4501 => similarity = 0.212468
+    Doc 1176 & Doc 3362 => similarity = 0.259083
+    Doc 1176 & Doc 754 => similarity = 0.125061
+    Doc 438 & Doc 3463 => similarity = 0.733128
+    Doc 6532 & Doc 2516 => similarity = 0.153568
+    Doc 4533 & Doc 1077 => similarity = 0.000000
+    Doc 5340 & Doc 4909 => similarity = 0.209202
+    (90 more pairs computed)
+    Average similarity: 0.316644
+
+  Thread Execution Time : 0.190276 seconds
+  Threads used          : 8
+
+000000000000000000000000000
+OPENMP_VERSION RESULTS:
+000000000000000000000000000
+
+  OpenMP threads available: 8
+
+  Vocabulary size: 21
+
+  Top 10 most frequent words:
+    awful : 3684
+    training : 3664
+    speed : 3632
+    excellent : 3632
+    good : 3630
+    terrible : 3620
+    algorithm : 3598
+    bad : 3596
+    great : 3586
+    software : 3585
+
+  TF-IDF computed for all documents.
+
+  K-Means Clusters (K=5, 10 iterations):
+    Cluster 1 -> 1475 documents
+    Cluster 2 -> 1420 documents
+    Cluster 3 -> 1709 documents
+    Cluster 4 -> 1763 documents
+    Cluster 5 -> 1175 documents
+
+  Cosine Similarity (100 pairs) [sample of 10 shown]:
+    Doc 2824 & Doc 6007 => similarity = 0.3368
+    Doc 7170 & Doc 1383 => similarity = 0.2046
+    Doc 5520 & Doc 5880 => similarity = 0.0000
+    Doc 4515 & Doc 4501 => similarity = 0.2125
+    Doc 1176 & Doc 3362 => similarity = 0.2591
+    Doc 1176 & Doc 754 => similarity = 0.1251
+    Doc 438 & Doc 3463 => similarity = 0.7331
+    Doc 6532 & Doc 2516 => similarity = 0.1536
+    Doc 4533 & Doc 1077 => similarity = 0.0000
+    Doc 5340 & Doc 4909 => similarity = 0.2092
+    (90 more pairs computed)
+    Average similarity: 0.3166
+
+  OpenMP Execution Time : 0.3423 seconds
+  Threads used          : 8

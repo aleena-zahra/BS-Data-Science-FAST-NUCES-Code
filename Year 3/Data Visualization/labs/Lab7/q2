@@ -1,0 +1,21 @@
+// University Hierarchy
+digraph {
+	rankdir=TB
+	Rector [label="Rector: Dr. Khalid"]
+	Dean [label="Dean: Ms. Sadaf"]
+	HoD_Math [label="HoD Math: Dr. Salman"]
+	HoD_Physics [label="HoD Physics: Dr. Nida"]
+	Prof_Math1 [label="Prof Math: Mr. Usman"]
+	Prof_Math2 [label="Prof Math: Ms. Hina"]
+	Prof_Physics1 [label="Prof Physics: Mr. Tariq"]
+	Lect_Math [label="Lect Math: Ms. Sana"]
+	Lab_Assistant [label="Lab Assistant: Mr. Bilal"]
+	Rector -> Dean
+	Dean -> HoD_Math
+	Dean -> HoD_Physics
+	HoD_Math -> Prof_Math1
+	HoD_Math -> Prof_Math2
+	HoD_Physics -> Prof_Physics1
+	Prof_Math1 -> Lect_Math
+	Lect_Math -> Lab_Assistant
+}

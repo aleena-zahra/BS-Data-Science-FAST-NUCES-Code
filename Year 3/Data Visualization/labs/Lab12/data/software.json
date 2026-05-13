@@ -1,0 +1,81 @@
+{
+  "name": "SoftwareSystem",
+  "children": [
+    {
+      "name": "Frontend",
+      "children": [
+        {
+          "name": "Login.js",
+          "size": 620
+        },
+        {
+          "name": "Register.js",
+          "size": 810
+        },
+        {
+          "name": "Dashboard.js",
+          "size": 1430
+        },
+        {
+          "name": "Profile.js",
+          "size": 920
+        },
+        {
+          "name": "Settings.js",
+          "size": 760
+        }
+      ]
+    },
+    {
+      "name": "Backend",
+      "children": [
+        {
+          "name": "api.js",
+          "size": 1100
+        },
+        {
+          "name": "database.js",
+          "size": 1350
+        },
+        {
+          "name": "auth.js",
+          "size": 900
+        },
+        {
+          "name": "cache.js",
+          "size": 780
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "children": [
+        {
+          "name": "notification.js",
+          "size": 1010
+        },
+        {
+          "name": "email.js",
+          "size": 770
+        },
+        {
+          "name": "reporting.js",
+          "size": 880
+        }
+      ]
+    },
+    {
+      "name": "Testing",
+      "children": [
+        {
+          "name": "unit-tests.js",
+          "size": 1250
+        },
+        {
+          "name": "integration-tests.js",
+          "size": 1450
+        }
+      ]
+    }
+  ]
+}

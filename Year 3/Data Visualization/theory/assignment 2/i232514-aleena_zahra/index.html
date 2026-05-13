@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Interactive Dashboards via D3</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1>Assignment 2 : Advanced D3 Dashboards</h1>
+        <p>Semantic zoom, linked filtering, motion chart, and hierarchy controls.</p>
+      </div>
+    </header>
+
+    <main>
+      <section id="task1" class="panel">
+        <div class="panel-header">
+          <h2>Task 1 : Spatial &amp; Network Analysis</h2>
+          <p>
+            Global power production from database_WRI.csv.
+          </p>
+        </div>
+
+        <div class="task1-layout">
+          <div class="map-wrapper">
+            <h3>Zoomable Aggregate Map</h3>
+            <div id="task1-map" class="viz-surface"></div>
+            <div class="legend" id="task1-map-legend"></div>
+          </div>
+
+          <div class="bubbles-wrapper">
+            <h3>Fuel Force Bubbles</h3>
+            <div id="task1-bubbles" class="viz-surface"></div>
+          </div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <h3>Brushable Capacity Timeline</h3>
+          <div id="task1-timeline" class="viz-surface narrow"></div>
+        </div>
+      </section>
+
+      <section id="task2" class="panel">
+        <div class="panel-header">
+          <h2>Task 2 : Temporal &amp; Hierarchical Simulation</h2>
+          <p>
+            Motion chart, synchronized choropleth, slider, and donut hierarchy built from
+            GDP, Life Expectancy, Population.
+          </p>
+        </div>
+
+        <div class="controls-wrapper">
+          <button id="play-pause" class="btn primary">Play</button>
+          <div id="year-slider" class="slider"></div>
+          <div id="current-year" class="year-label">Year: --</div>
+        </div>
+
+        <div class="task2-layout">
+          <div class="chart-wrapper">
+            <h3>Motion Chart</h3>
+            <div id="motion-chart" class="viz-surface"></div>
+            <div class="legend" id="motion-legend"></div>
+          </div>
+          <div class="chart-wrapper">
+            <h3>Life Expectancy Choropleth</h3>
+            <div id="task2-map" class="viz-surface"></div>
+          </div>
+        </div>
+
+        <div class="hierarchy-wrapper">
+          <h3>World &rarr; Continent &rarr; Country Hierarchy</h3>
+          <div id="hierarchy-chart" class="viz-surface narrow"></div>
+        </div>
+      </section>
+    </main>
+
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
+
