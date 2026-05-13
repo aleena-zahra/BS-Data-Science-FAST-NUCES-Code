@@ -10,10 +10,8 @@ This repository includes work from courses such as:
 - Data Structures 
 - Database Systems
 - Artificial Intelligence
-- Operating Systems
-- Machine Learning
-- Deep Learning
-- Computer Networks
+- Data Visulization
+- Data Mining
 
 ## Repository Structure
 
